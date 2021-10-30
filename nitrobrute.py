@@ -29,15 +29,7 @@ def mesh():
             cipher_upkeep,
             k = 16
         ));
-    return code_from_cipher;
-
-class ThreadStarter (threading.Thread):
-    def __INIT__(self, thread_name, selection):
-        threading.Thread.__INIT__(self);
-        self.thread_name = thread_name;
-        self.selection = selection;
-    def run(self):
-        method(self.thread_name, self.selection);        
+    return code_from_cipher;       
 
 def method(id, thread_name, selection):
     if selection == 1:
