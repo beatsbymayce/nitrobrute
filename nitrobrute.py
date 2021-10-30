@@ -1,11 +1,11 @@
-import requests
+import requests # add via pip
 import random
 from random import randrange
-import threading
+import threading # add via pip
 import string
 import time
 from os import system, name
-from colorama import Fore, Back, Style
+from colorama import Fore, Back, Style # add via pip
 
 logo = """  _   _ _ _             _                _       
  | \ | (_) |           | |              | |      
@@ -16,13 +16,13 @@ logo = """  _   _ _ _             _                _
  \t\t\t\tdeveloped by mayce 2021""";
 url = "https://discordapp.com/api/v6/entitlements/gift-codes/NITROCODE?with_application=false&with_subscription_plan=true";
 
-def clearScreen():
+def clearScreen(): # clear console according to os
     if name == 'nt':
         _ = system('cls');
     else:
         _ = system('clear');
 
-def mesh():
+def mesh(): # generate code mesh
     cipher = "OGIHjFkDa9AosyQzLrfSmp3tT0Kc1N4iWwdRhubnPe27JqxlEUBYvZ8g5CM6XV";
     cipher_upkeep = ''.join(random.sample(cipher, len(cipher)));
     code_from_cipher = ''.join(random.choices(
@@ -31,7 +31,7 @@ def mesh():
         ));
     return code_from_cipher;       
 
-def method(id, thread_name, selection):
+def method(id, thread_name, selection): # run api checks on mesh
     if selection == 1:
         _t = True;
         while(_t):
@@ -83,7 +83,7 @@ def method(id, thread_name, selection):
         main();
     
 
-def main():
+def main(): # main handle
     clearScreen();
     
     print(Fore.BLUE + logo + Style.RESET_ALL + "\n\n");
@@ -96,6 +96,8 @@ def main():
     
     selection = int(input("\nSelection > " + Fore.CYAN));
     print(Style.RESET_ALL);
+    
+    # threading
     global threadStack;
     threadStack = [];
     for x in range(50):
